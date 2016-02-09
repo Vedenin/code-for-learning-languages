@@ -28,7 +28,7 @@
     </dependencies>
     <modules>
         <module>java-english</module>
-        <module>polish</module>
+        <module>java-polish</module>
     </modules>
 
 </project>

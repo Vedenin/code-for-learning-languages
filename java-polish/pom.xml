@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.github.vedenin</groupId>
-    <artifactId>polish</artifactId>
+    <artifactId>java-polish</artifactId>
     <version>0.01</version>
     <name>Java Code To learn languages :: Polish</name>
     
