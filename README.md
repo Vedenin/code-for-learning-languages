@@ -1,1 +1,2 @@
-# java-english-learn
+### Project to learn different natural languages (English, Polish and so on) using mnemonic rules with Java code
+This is project for use mnemonic rules to learn grammar rules of different natural languages (English, Polish and so on).
