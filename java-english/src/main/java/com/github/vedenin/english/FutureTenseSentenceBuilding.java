@@ -14,7 +14,6 @@ public class FutureTenseSentenceBuilding {
     private static final String WILL = "will ";
     private static final String BE = "be ";
     private static final String HAVE = "have ";
-    private static final String HAS = "has ";
     private static final String BEEN = "been ";
 
 
