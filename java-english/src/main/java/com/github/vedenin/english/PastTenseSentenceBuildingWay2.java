@@ -64,7 +64,7 @@ public class PastTenseSentenceBuildingWay2 {
             case SIMPLE:
                 return isPositive ? "" : DID;
             case CONTINUOUS:
-                return (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE);
+                return pronoun == I || pronoun == HE_SHE_IT? WAS: WERE;
         }
         return HAD;
     }
