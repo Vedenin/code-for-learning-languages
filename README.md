@@ -15,9 +15,3 @@ For example, a mnemonic rule for all Past tense in English using Java code is ju
         }        
         
 It's may be easy way to learn grammar for programmer then traditional method.    
-     
-     
-     
-| Tense | Positive | Negative | Question |
-| ----- | 	-------|---------- | 	-------|
-| switch (tenseForms) {<br>   case SIMPLE:<br>    return pronoun + verb + "ed";<br>case CONTINUOUS:<br>return pronoun + (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + verb + "ing";<br>case PERFECT:<br>return pronoun + HAD + verb + "ed";<br> case PERFECT_CONTINUOUS:<br> return pronoun + HAD + BEEN + verb + "ing";}  | 	-------|---------- | 	-------|
