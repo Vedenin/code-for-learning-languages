@@ -3,14 +3,14 @@ package com.github.vedenin.english;
 import com.github.vedenin.english.enums.Pronoun;
 import com.github.vedenin.english.enums.TenseForms;
 
-import static com.github.vedenin.english.utils.Utils.println;
 import static com.github.vedenin.english.enums.Pronoun.*;
 import static com.github.vedenin.english.enums.TenseForms.*;
+import static com.github.vedenin.english.utils.Utils.println;
 
 /**
  * Created by vvedenin on 2/9/2016.
  */
-public class PastTenseSentenceBuilding {
+public class PastTenseSentenceBuildingWay2 {
     private static final String WAS = "was ";
     private static final String WERE = "were ";
     private static final String DID = "did ";
@@ -43,48 +43,41 @@ public class PastTenseSentenceBuilding {
         println("Perfect Continuous" , buildQuestion(I, "play", PERFECT_CONTINUOUS));
     }
 
-
     private static String buildPositiveSentence(Pronoun pronoun, String verb, TenseForms tenseForms) {
-        switch (tenseForms) {
-            case SIMPLE:
-                return pronoun + verb + "ed";
-            case CONTINUOUS:
-                return pronoun + (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + verb + "ing";
-            case PERFECT:
-                return pronoun + HAD + verb + "ed";
-            case PERFECT_CONTINUOUS:
-                return pronoun + HAD + BEEN + verb + "ing";
-        }
-        return null;
+        return pronoun + getAuxiliaryVerb(pronoun, tenseForms, true) +
+                getBeenOrEmpty(tenseForms) + verb + getEnding(tenseForms, true);
     }
 
 
     private static String buildNegativeSentence(Pronoun pronoun, String verb, TenseForms tenseForms) {
-        switch (tenseForms) {
-            case SIMPLE:
-                return pronoun + DID +"not " + verb;
-            case CONTINUOUS:
-                return pronoun + (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + "not " + verb + "ing";
-            case PERFECT:
-                return pronoun + HAD + "not " + verb + "ed";
-            case PERFECT_CONTINUOUS:
-                return pronoun + HAD + "not " + BEEN + verb + "ing";
-        }
-        return null;
+        return pronoun + getAuxiliaryVerb(pronoun, tenseForms, false) + "not " +
+                getBeenOrEmpty(tenseForms) + verb + getEnding(tenseForms, false);
     }
 
     private static String buildQuestion(Pronoun pronoun, String verb, TenseForms tenseForms) {
+        return getAuxiliaryVerb(pronoun, tenseForms, false) + pronoun +
+                getBeenOrEmpty(tenseForms) + verb + getEnding(tenseForms, false);
+    }
+
+    private static String getAuxiliaryVerb(Pronoun pronoun, TenseForms tenseForms, boolean isPositive) {
         switch (tenseForms) {
             case SIMPLE:
-                return DID + pronoun + verb + "?";
+                return isPositive ? "" : DID;
             case CONTINUOUS:
-                return  (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + pronoun + verb + "ing?";
-            case PERFECT:
-                return HAD + pronoun + verb + "ed?";
-            case PERFECT_CONTINUOUS:
-                return HAD + pronoun + BEEN + verb + "ing?";
+                return (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE);
         }
-        return null;
+        return HAD;
     }
+
+    private static String getEnding(TenseForms tenseForms, boolean isPositive) {
+        if(tenseForms == SIMPLE) return isPositive? "ed" : "";
+        else return tenseForms == PERFECT ? "ed": "ing";
+    }
+
+    private static String getBeenOrEmpty(TenseForms tenseForms) {
+        return tenseForms == PERFECT_CONTINUOUS ? BEEN: "";
+    }
+
+
 
 }
