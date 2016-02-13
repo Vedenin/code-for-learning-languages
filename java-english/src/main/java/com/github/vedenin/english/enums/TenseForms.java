@@ -6,5 +6,6 @@ package com.github.vedenin.english.enums;
 public enum TenseForms {
     SIMPLE,
     CONTINUOUS,
-    PERFECT
+    PERFECT,
+    PERFECT_CONTINUOUS
 }
