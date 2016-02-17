@@ -33,3 +33,10 @@ Past	 | 	`pronoun + DID +"not " + verb`	 | 	`pronoun + (pronoun == I || pronoun 
 Present	 | 	`pronoun + (pronoun == HE_SHE_IT ? DOES : DO) + "not " + verb`	 | `pronoun + (pronoun == I ? AM : pronoun == HE_SHE_IT ? IS : ARE) + "not " + verb + "ing"`  | `pronoun + (pronoun == HE_SHE_IT ? HAS: HAVE) + "not " + verb + "ed"` | `pronoun + (pronoun == HE_SHE_IT ? HAS: HAVE) + "not " + BEEN + verb + "ing"`
 Future	 | 	`pronoun + WILL + "not " + verb`	 | `pronoun + WILL + "not "  + BE + verb + "ing"`  | `pronoun + WILL  + "not " + HAVE + verb + "ed"` | `pronoun + WILL + "not " + HAVE + BEEN + verb + "ing"`
 
+#### Question sentence
+Tense	 | 	Simple	 | 	Continuous  | Perfect | Perfect Continuous
+-------- | 	-------- | 	----------- | 	----- | 	-----------
+Past	 | 	`DID + pronoun + verb + "?"`	 | 	`(pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + pronoun + verb + "ing?"`  | `HAD + pronoun + verb + "ed?"` | `HAD + pronoun + BEEN + verb + "ing?"`
+Present	 | 	`(pronoun == HE_SHE_IT ? DOES : DO) + pronoun + verb + "?"`	 | `(pronoun == I ? AM : pronoun == HE_SHE_IT ? IS : ARE) + pronoun + verb + "ing?"`  | `(pronoun == HE_SHE_IT ? HAS: HAVE) + pronoun + verb + "ed?"` | `(pronoun == HE_SHE_IT ? HAS: HAVE) + pronoun + BEEN + verb + "ing?"`
+Future	 | 	`WILL + pronoun + verb + "?"`	 | `WILL + pronoun + BE + verb + "ing?"`  | `WILL + pronoun + HAVE + verb + "ed?"` | `WILL + pronoun + HAVE + BEEN + verb + "ing?"`
+
