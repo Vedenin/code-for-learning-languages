@@ -47,4 +47,43 @@ Past	 | 	`pronoun + (pronoun == I || pronoun == HE_SHE_IT? WAS: WERE) + verb + "
 Present	 | 	`pronoun + (pronoun == I ? AM : pronoun == HE_SHE_IT ? IS : ARE) + verb + "ed"`	 | `pronoun + (pronoun == I ? AM : pronoun == HE_SHE_IT ? IS : ARE) + BEING + verb + "ed"` | `pronoun + (pronoun == HE_SHE_IT ? HAS: HAVE) + BEEN + verb + "ed"`
 Future	 | 	`pronoun + WILL + BE + verb + "ed"`	 | NULL  | `pronoun + WILL + HAVE + BEEN + verb + "ed"`
 
+####  FutureInPast
 
+        switch (tenseForms) {
+            case SIMPLE:
+                return pronoun + WOULD + verb;
+            case CONTINUOUS:
+                return pronoun + WOULD + BE + verb + "ing";
+            case PERFECT:
+                return pronoun + WOULD +  HAVE + verb + "ed";
+            case PERFECT_CONTINUOUS:
+                return pronoun + WOULD +  HAVE + BEEN + verb + "ing";
+        }
+        
+####  Conditions
+
+        if(condition == REAL) {
+            if(tense == PRESENT || tense == FUTURE) { // FirstCondition
+                verdInMainStatement = convertToFuture(verdInMainStatement);
+                verdInSecondStatement = convertToPresent(verdInSecondStatement);
+            } else {
+                throw new IllegalStateException(); // Condition isn't exist
+            }
+        } else if(condition == UNREAL) {
+            if(tense == PRESENT || tense == FUTURE) { // SecondCondition
+                verdInMainStatement = SHOULD + verdInMainStatement;
+                verdInSecondStatement = verdInSecondStatement.equals("be")? WERE:
+                        (verdInSecondStatement + "ed");
+            } else { // ThirdCondition
+                verdInMainStatement = SHOULD + (pronoun == HE_SHE_IT ? HAS: HAVE) +
+                        verdInMainStatement + "ed";
+                verdInSecondStatement = HAD + verdInSecondStatement + "ed";
+            }
+        } else {
+            throw new IllegalStateException(); // Condition isn't exist
+        }
+        
+        
+        More info for English see [this](https://github.com/Vedenin/code-for-learning-languages/tree/master/java-english/src/main/java/com/github/vedenin/english)   
+
+**P.S.** I'll happy if you add new natural and programm languages to this project. 
