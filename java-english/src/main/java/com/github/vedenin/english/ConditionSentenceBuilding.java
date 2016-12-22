@@ -62,7 +62,7 @@ public abstract class ConditionSentenceBuilding {
                 verdInMainStatement = convertToFuture(verdInMainStatement);
                 verdInSecondStatement = convertToPresent(verdInSecondStatement);
             } else {
-                throw new IllegalStateException(); // Condition isn't exist
+                throw new IllegalStateException(); // Condition doesn't exist
             }
         } else if(condition == UNREAL) {
             if(tense == PRESENT || tense == FUTURE) { // SecondCondition
@@ -75,7 +75,7 @@ public abstract class ConditionSentenceBuilding {
                 verdInSecondStatement = HAD + verdInSecondStatement + "ed";
             }
         } else {
-            throw new IllegalStateException(); // Condition isn't exist
+            throw new IllegalStateException(); // Condition doesn't exist
         }
         return verdInMainStatement + ", " + verdInSecondStatement;
     }
