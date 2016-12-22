@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java-english/java-english.iml" filepath="$PROJECT_DIR$/java-english/java-english.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-polish/java-polish.iml" filepath="$PROJECT_DIR$/java-polish/java-polish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-to-learn-languages.iml" filepath="$PROJECT_DIR$/java-to-learn-languages.iml" />
+    </modules>
+  </component>
+</project>
