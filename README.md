@@ -84,6 +84,6 @@ Future	 | 	`pronoun + WILL + BE + verb + "ed"`	 | NULL  | `pronoun + WILL + HAVE
         }
         
         
-        More info for English see [this](https://github.com/Vedenin/code-for-learning-languages/tree/master/java-english/src/main/java/com/github/vedenin/english)   
+More info for English see [this](https://github.com/Vedenin/code-for-learning-languages/tree/master/java-english/src/main/java/com/github/vedenin/english)   
 
 **P.S.** I'll happy if you add new natural and programm languages to this project. 
